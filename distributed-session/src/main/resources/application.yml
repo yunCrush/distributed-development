@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  redis:
+    host: 192.168.202.128
+    port: 6379
+  session:
+    store-type: redis
+    timeout: 3600
+    redis:
+      namespace: login_user
