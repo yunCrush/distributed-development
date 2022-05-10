@@ -1,0 +1,25 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_order?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 
+
+  cloud:
+    alibaba:
+      seata:
+#        项目的名称
+        tx-service-group: seata-order
+  application:
+    name: seata-order
+
+seata:
+  service:
+    vgroup-mapping:
+      seata-order: default
+    grouplist:
+#      与seata通信
+      default: 127.0.0.1:8091
